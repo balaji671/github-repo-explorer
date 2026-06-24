@@ -49,7 +49,7 @@ export function RepoExplorer() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const totalPages = Math.min(Math.ceil(totalCount / PER_PAGE), 34); // GitHub search API max 1000 results
+  const totalPages = Math.min(Math.ceil(totalCount / PER_PAGE), Math.floor(1000 / PER_PAGE)); // GitHub API hard cap: 1000 results
 
   return (
     <div className="min-h-[calc(100vh-4rem)] bg-neutral-50 dark:bg-neutral-950">
